@@ -55,7 +55,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, onMounted } from 'vue';
+import { ref, computed } from 'vue';
 import { useTripsStore } from '../stores/trips';
 import { useAuthStore } from '../stores/auth';
 import type { Trip } from '../types';

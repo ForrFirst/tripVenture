@@ -1,24 +1,10 @@
 import { defineStore } from 'pinia';
-import { ref, computed } from 'vue';
+import { ref } from 'vue';
 import type { Trip } from '../types';
 import { useAuthStore } from './auth';
 
 export const useTripsStore = defineStore('trips', () => {
   const trips = ref<Trip[]>([]);
-
-  // Helper function to extract province from tags
-  const getProvinceFromTags = (tags: string[]): string => {
-    const provinces = [
-      'ตราด', 'กรุงเทพมหานคร', 'ชลบุรี', 'กาญจนบุรี', 'เชียงใหม่', 'สตูล',
-      'ไต้หวัน', 'ญี่ปุ่น', 'ฝรั่งเศส', 'ฟินแลนด์'
-    ];
-    for (const tag of tags) {
-      if (provinces.includes(tag)) {
-        return tag;
-      }
-    }
-    return tags[tags.length - 1] || 'ไม่ระบุ';
-  };
 
   // Helper function to create short description
   const createShortDescription = (description: string, maxLength: number = 150): string => {
